@@ -1,0 +1,45 @@
+<h1 align="center">Login Form</h1>
+<form [formGroup]="form" align="center">
+
+  <label>
+    First Name
+    <input type="text" formControlName="fname" placeholder="Enter name"/>  
+  </label>
+
+  <label>
+      Last Name
+      <input type="text" formControlName="lname" placeholder="Last name"/>  
+    </label>
+
+  <label>
+      Gender
+      <input type="text" formControlName="gender" placeholder="Gender"/>  
+    </label>
+
+  <label>
+      Contact
+      <input type="text" formControlName="contact" placeholder="94xxxxxxxxxx" />  
+    </label>
+
+  <label>
+      E-mail
+      <input type="email" formControlName="email" placeholder="email"/>  
+    </label>
+
+  <label>
+      Password
+      <input type="password" formControlName="pass" />  
+    </label>
+
+  <label>
+      Confirm Password
+      <input type="password" formControlName="cpass" />  
+    </label>
+
+  <label>
+      Emp Id
+      <input type="text" formControlName="empId" placeholder="Enter no" />  
+    </label>
+
+   <br> <button type="submit" (click) ="onclick()" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+    </form>
