@@ -1,3 +1,29 @@
 <p>
   rtc works!
 </p>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Gender</th>
+    <th>Contact</th>
+    <th>E-mail</th>
+    <th>Password</th>
+    <th>Confirm Password</th>
+    <th>Emp Id</th>
+  </tr>
+
+  <tr>
+  <th>{{fndata.fname}}</th>
+  <th>{{fndata.lname}}</th>
+  <th>{{fndata.gender}}</th>
+  <th>{{fndata.contact}}</th>
+  <th>{{fndata.email}}</th>
+  <th>{{fndata.pass}}</th>
+  <th>{{fndata.cpass}}</th>
+  <th>{{fndata.empId}}</th>
+  </tr>
+</table>
+
+
+<button (click)="Edit()">Edit</button>

@@ -3,7 +3,7 @@
 
   <label>
     First Name
-    <input type="text" formControlName="fname" placeholder="Enter name" minlength="5" maxlength="10"/>  
+   <input type="text" formControlName="fname" placeholder="Enter name" minlength="5" maxlength="10" />  
     <span *ngIf="!form.controls['fname'].valid">*</span>
   </label>
 <br/>
@@ -14,14 +14,14 @@
     </label>
 
   <label>
-      Gender
-      <input type="text" formControlName="gender" placeholder="Gender" minlength="5" maxlength="10"/>  
+     &emsp; Gender
+      <input type="text" formControlName="gender" placeholder="Gender" minlength="5" maxlength="10" />  
       <span *ngIf="!form.controls['gender'].valid">*</span>
     </label>
 
   <label>
       Contact
-      <input type="text" formControlName="contact" placeholder="94xxxxxxxxx08" minlength="5" maxlength="10"/> 
+      <input type="text" formControlName="contact" placeholder="94xxxxxxxxx08" minlength="10" maxlength="12"/> 
       <span *ngIf="!form.controls['contact'].valid">*</span> 
     </label>
 
@@ -38,7 +38,7 @@
     </label>
 
   <label>
-      Confirm Password
+      <br/>Confirm Password
       <input type="password" formControlName="cpass" minlength="5" maxlength="10" /> 
       <span *ngIf="!form.controls['cpass'].valid">*</span> 
     </label>
@@ -50,5 +50,5 @@
        
     </label>
 
-   <br> <button type="submit" (click) ="onclick()" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+   <br> <button (click) ="rtc()" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
     </form>

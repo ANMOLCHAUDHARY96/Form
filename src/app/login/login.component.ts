@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl ,FormGroup} from '@angular/forms';
 import {Validators} from '@angular/forms';
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,14 +22,37 @@ export class LoginComponent implements OnInit {
     }
   )
 
-  onclick(){
-    localStorage.setItem("data",JSON.stringify(this.form.value));
-    
+
+
+  confirmme(){
+    if(this.form.value.pass!==this.form.value.cpass)
+    {
+      return false;
+    }
+    else{
+      return true;
+    }
   }
 
-  constructor() { }
+  rtc(){
+    localStorage.setItem("data",JSON.stringify(this.form.value));
+    this.router.navigate(['/rtc']);
+  }
+
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    let fndata=JSON.parse(localStorage.getItem("fdata"))
+    this.form.patchValue({fname:fndata.fname,
+      lname:fndata.lname,
+      gender:fndata.gender,
+     contact:fndata.contact,
+    pass:fndata.pass,
+    cpass:fndata.cpass,
+    empId:fndata.empid,
+
+
+    })
   }
 
 }
