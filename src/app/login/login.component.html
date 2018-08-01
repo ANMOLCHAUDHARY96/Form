@@ -4,51 +4,52 @@
   <label>
     First Name
    <input type="text" formControlName="fname" placeholder="Enter name" minlength="5" maxlength="10" />  
-    <span *ngIf="!form.controls['fname'].valid">*</span>
-  </label>
-<br/>
+    <span *ngIf="!form.controls['fname'].valid">characters</span>
+  </label><br/><br/>
+
   <label>
       Last Name
       <input type="text" formControlName="lname" placeholder="Last name" minlength="5" maxlength="10"/>  
-      <span *ngIf="!form.controls['lname'].valid">*</span>
-    </label>
+      <span *ngIf="!form.controls['lname'].valid">Only Last name</span>
+    </label><br/><br/>
 
   <label>
      &emsp; Gender
-      <input type="text" formControlName="gender" placeholder="Gender" minlength="5" maxlength="10" />  
-      <span *ngIf="!form.controls['gender'].valid">*</span>
-    </label>
+      <input type="text" formControlName="gender" placeholder="Gender" minlength="4" maxlength="10" />  
+      <span *ngIf="!form.controls['gender'].valid">M or F</span>
+    </label><br/><br/>
 
   <label>
       Contact
       <input type="text" formControlName="contact" placeholder="94xxxxxxxxx08" minlength="10" maxlength="12"/> 
-      <span *ngIf="!form.controls['contact'].valid">*</span> 
-    </label>
+      <span *ngIf="!form.controls['contact'].valid">No</span> 
+    </label><br/><br/>
 
   <label>
       E-mail
-      <input type="email" formControlName="email" placeholder="email" minlength="5" maxlength="10"/>  
-      <span *ngIf="!form.controls['email'].valid">*</span> 
-    </label>
+      <input type="email" formControlName="email" placeholder="email" minlength="5" maxlength="20"/>  
+      <span *ngIf="!form.controls['email'].valid">Fromat Wrong</span> 
+    </label><br/><br/>
 
   <label>
       Password
       <input type="password" formControlName="pass" minlength="5" maxlength="10"/>
-      <span *ngIf="!form.controls['pass'].valid">*</span>  
-    </label>
+      <span *ngIf="!form.controls['pass'].valid">Invalid</span>  
+    </label><br/><br/>
 
   <label>
       <br/>Confirm Password
-      <input type="password" formControlName="cpass" minlength="5" maxlength="10" /> 
-      <span *ngIf="!form.controls['cpass'].valid">*</span> 
-    </label>
+      <input type="password" formControlName="cpass" minlength="5" maxlength="10" (keyup)='confirm()'/> 
+      <span *ngIf="!form.controls['cpass'].valid">Invalid</span> 
+     <br/> <span *ngIf='cnp'>Try Again</span>
+    </label><br/><br/>
 
   <label>
       Emp Id
       <input type="text" formControlName="empId" placeholder="Enter no"/> 
-      <span *ngIf="!form.controls['empId'].valid">*</span> 
+      <span *ngIf="!form.controls['empId'].valid">Digits</span> 
        
-    </label>
+    </label><br/><br/>
 
    <br> <button (click) ="rtc()" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
     </form>

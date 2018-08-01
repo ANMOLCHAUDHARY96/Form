@@ -23,14 +23,15 @@ export class LoginComponent implements OnInit {
   )
 
 
+cnp:boolean=false;
 
-  confirmme(){
+  confirm(){
     if(this.form.value.pass!==this.form.value.cpass)
     {
-      return false;
+      this.cnp=true;
     }
     else{
-      return true;
+      this.cnp=false;
     }
   }
 
@@ -42,17 +43,20 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    let fndata=JSON.parse(localStorage.getItem("fdata"))
-    this.form.patchValue({fname:fndata.fname,
+
+    if(this.router.url==='/login')
+    {
+    let fndata=JSON.parse(localStorage.getItem("data"))
+    this.form.patchValue({
+      fname:fndata.fname,
       lname:fndata.lname,
       gender:fndata.gender,
      contact:fndata.contact,
     pass:fndata.pass,
     cpass:fndata.cpass,
-    empId:fndata.empid,
-
-
+    empId:fndata.empid
     })
+  }
   }
 
 }

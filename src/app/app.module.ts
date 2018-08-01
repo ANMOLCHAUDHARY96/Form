@@ -3,14 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import {ReactiveFormsModule, FormControl} from '@angular/forms';
-import {RouterModule,Routes} from '@angular/router';
-import {RtcComponent} from './rtc/rtc.component';
+import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { RtcComponent } from './rtc/rtc.component';
 
-const route:Routes=[{ path:'rtc',
-component:RtcComponent},
-{path:'login',
-component:LoginComponent}
+const route: Routes = [{
+  path: 'rtc',
+  component: RtcComponent
+},
+{
+  path: 'login',
+  component: LoginComponent
+},
+{
+  path: ' ',
+  component: LoginComponent
+}
 ]
 
 
@@ -29,6 +37,6 @@ component:LoginComponent}
   bootstrap: [AppComponent]
 })
 export class AppModule {
- 
- }
+
+}
 
