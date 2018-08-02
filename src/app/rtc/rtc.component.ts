@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {AnmolService} from '../anmol.service';
 
 @Component({
   selector: 'app-rtc',
@@ -9,8 +10,9 @@ import { Router } from '@angular/router';
 export class RtcComponent implements OnInit {
 
   fndata:Object
-constructor(private router:Router) {
-  this.fndata=JSON.parse(localStorage.getItem("data"));
+constructor(private router:Router,private service:AnmolService) {
+  //this.fndata=JSON.parse(localStorage.getItem("data"));
+  this.fndata=this.service.getdata();
  }
 
   Edit(){
@@ -18,6 +20,7 @@ constructor(private router:Router) {
   }
 
   ngOnInit() {
+    
   }
 
 }

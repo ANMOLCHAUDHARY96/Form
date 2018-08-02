@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl ,FormGroup} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import {Router} from '@angular/router'
+import {AnmolService} from '../anmol.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -36,17 +37,21 @@ cnp:boolean=false;
   }
 
   rtc(){
-    localStorage.setItem("data",JSON.stringify(this.form.value));
+    //localStorage.setItem("data",JSON.stringify(this.form.value));
+    this.service.setdata(this.form.value);
     this.router.navigate(['/rtc']);
   }
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private service:AnmolService) { }
 
   ngOnInit() {
 
     if(this.router.url==='/login')
     {
-    let fndata=JSON.parse(localStorage.getItem("data"))
+   //let fndata=JSON.parse(localStorage.getItem("data"))
+   let fndata=this.service.getdata();
+    if(fndata!=null)
+    {
     this.form.patchValue({
       fname:fndata.fname,
       lname:fndata.lname,
@@ -58,5 +63,6 @@ cnp:boolean=false;
     })
   }
   }
+}
 
 }

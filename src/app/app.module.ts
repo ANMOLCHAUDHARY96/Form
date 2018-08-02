@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { RtcComponent } from './rtc/rtc.component';
+import { AnmolService}from './anmol.service';
 
 const route: Routes = [{
   path: 'rtc',
@@ -33,7 +34,7 @@ const route: Routes = [{
     ReactiveFormsModule,
     RouterModule.forRoot(route)
   ],
-  providers: [],
+  providers: [AnmolService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
